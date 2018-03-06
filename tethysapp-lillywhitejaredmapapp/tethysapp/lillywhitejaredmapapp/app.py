@@ -13,7 +13,7 @@ class Lillywhitejaredmapapp(TethysAppBase):
     root_url = 'lillywhitejaredmapapp'
     color = '#27AE60'
     description = 'This is my map app with my name/'
-    tags = '&quot;Map&quot;'
+    tags = 'Map'
     enable_feedback = False
     feedback_emails = []
 

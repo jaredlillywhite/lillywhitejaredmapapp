@@ -7,6 +7,31 @@
   </div>
 {% endblock %}
 
+{% block app_navigation_items %}
+  {% url 'lillywhitejaredmapapp:home' as home %}
+  {% url 'lillywhitejaredmapapp:mapview' as mapview %}
+  {% url 'lillywhitejaredmapapp:dataservices' as dataservices %}
+  {% url 'lillywhitejaredmapapp:about' as about %}
+  {% url 'lillywhitejaredmapapp:proposal' as proposal %}
+  {% url 'lillywhitejaredmapapp:mockup' as mockup %}
+
+  <li class="title">App Navigation</li>
+  <li class="{% if request.path == home %}active{% endif %}"><a href="{{ home }}">Home</a></li>
+  <li class="{% if request.path == mapview %}active{% endif %}"><a href="{{ mapview }}">Map View</a></li>
+  <li class="{% if request.path == dataservices %}active{% endif %}"><a href="{{ dataservices }}">Data Services</a></li>
+  <li class="{% if request.path == about %}active{% endif %}"><a href="{{ about }}">About</a></li>
+  <li class="{% if request.path == proposal %}active{% endif %}"><a href="{{ proposal }}">Project Proposal</a></li>
+  <li class="{% if request.path == mockup %}active{% endif %}"><a href="{{ mockup }}">Mockup Diagram</a></li>
+  <li class="separator"></li>
+    {% gizmo vertical_buttons %}
+    <p></p>
+    {% gizmo grade_slider %}
+    <p></p>
+    <br>
+    {% gizmo find_route_button %}
+
+{% endblock %}
+
 {% block app_content %}
 
 <head>
